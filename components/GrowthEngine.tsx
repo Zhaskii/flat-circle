@@ -1,197 +1,178 @@
 "use client";
 
 import React, { useState } from "react";
-import { Search, PenTool, Cpu, Repeat, ShieldCheck, Zap } from "lucide-react";
+import {
+  ArrowRight,
+  BarChart3,
+  Check,
+  Compass,
+  PenTool,
+  Zap,
+} from "lucide-react";
+
+const phases = [
+  {
+    number: "01",
+    title: "Understand",
+    label: "Discovery & direction",
+    description:
+      "We start by understanding your business, audience, current digital presence, and the opportunity that deserves attention first.",
+    deliverables: [
+      "Digital presence review",
+      "Audience and competitor context",
+      "Clear priorities for the first phase of work",
+    ],
+    outcome: "A shared view of what matters, what can wait, and where the work should begin.",
+    icon: Compass,
+  },
+  {
+    number: "02",
+    title: "Build",
+    label: "Foundation & creative",
+    description:
+      "We make the core pieces work together—from your web experience and search foundations to the content and creative that carry your message.",
+    deliverables: [
+      "Website and landing-page improvements",
+      "Search-ready content structure",
+      "Campaign creative and content systems",
+    ],
+    outcome: "A clearer digital foundation with a consistent, useful customer experience.",
+    icon: PenTool,
+  },
+  {
+    number: "03",
+    title: "Activate",
+    label: "Launch & learning",
+    description:
+      "We take focused work to market, watch how people respond, and use early signals to make the next decision more informed.",
+    deliverables: [
+      "Search and campaign launches",
+      "Audience and message testing",
+      "A practical reporting rhythm",
+    ],
+    outcome: "Live activity with a clear way to understand what is working and why.",
+    icon: Zap,
+  },
+  {
+    number: "04",
+    title: "Improve",
+    label: "Ongoing optimisation",
+    description:
+      "We turn data, customer behaviour, and team feedback into refinements that improve visibility, journeys, and efficiency over time.",
+    deliverables: [
+      "Search visibility refinement",
+      "Conversion recommendations",
+      "Monthly priorities and learnings",
+    ],
+    outcome: "Steadier progress through continuous, evidence-led improvement.",
+    icon: BarChart3,
+  },
+] as const;
 
 export default function GrowthEngine() {
-  const [activeStep, setActiveStep] = useState<number>(0);
-
-  const steps = [
-    {
-      number: "01",
-      title: "Market Forensics & Payment/Pixel Audit",
-      timeline: "Days 1 – 14",
-      subtitle: "Auditing your dollar-card ad spend, local search citations & funnel leaks",
-      icon: Search,
-      deliverables: [
-        "International ad account & dollar-card compliance audit",
-        "Meta Conversions API (CAPI) & GA4 server-side tracking setup",
-        "Google My Business & Nepali local citation verification",
-        "Competitor ad copy and creative reverse-engineering in Nepal",
-      ],
-      description:
-        "We never deploy ad budgets blindly. In Phase 01, we fix pixel/CAPI discrepancies, audit your unit economics, evaluate local competitor campaigns in Kathmandu, and ensure your tracking infrastructure is airtight.",
-    },
-    {
-      number: "02",
-      title: "Vernacular Creative & Payment Funnels",
-      timeline: "Days 15 – 25",
-      subtitle: "Crafting viral Nepali TikTok hooks and sub-second eSewa/Khalti checkout flows",
-      icon: PenTool,
-      deliverables: [
-        "Production of 20+ viral TikTok & Instagram Reels with Nepali cultural hooks",
-        "Sub-second landing page builds with 1-click eSewa, Khalti & ConnectIPS buttons",
-        "Automated WhatsApp confirmation workflow to prevent fake COD orders",
-        "Bilingual ad copywriting (authentic conversational Nepali + clean English)",
-      ],
-      description:
-        "Creative is the engine of conversion in Nepal. We create culturally relatable short-form video hooks paired with frictionless mobile checkouts built specifically for local payment wallets and mobile telecom speeds.",
-    },
-    {
-      number: "03",
-      title: "Algorithmic Scaling & Geo-Targeting",
-      timeline: "Days 26 – 60",
-      subtitle: "Scaling winner campaigns across Kathmandu, Pokhara, Terai & the Diaspora",
-      icon: Cpu,
-      deliverables: [
-        "Meta & Google Dynamic testing sandboxes with strict cost-cap discipline",
-        "Geo-segmented targeting: Kathmandu Valley, Pokhara, Chitwan, Butwal, Biratnagar",
-        "Diaspora targeting funnels (Australia, UK, USA, Gulf & Japan)",
-        "Local SEO acceleration to dominate Google Maps 3-Pack rankings",
-      ],
-      description:
-        "Once winning angles emerge from our testing sandbox, we scale ad budgets into verified high-ROAS audiences across major commercial hubs in Nepal and the high-purchasing-power Nepali diaspora.",
-    },
-    {
-      number: "04",
-      title: "Compounding Retention & Viber/SMS Loops",
-      timeline: "Days 60+",
-      subtitle: "Maximizing repeat orders through Viber communities, SMS & festival campaigns",
-      icon: Repeat,
-      deliverables: [
-        "High-deliverability transactional & promotional Bulk SMS in Nepal",
-        "Viber Business & WhatsApp automated broadcast funnels",
-        "Seasonal revenue playbooks for Dashain, Tihar, New Year & wedding seasons",
-        "Customer loyalty tiers and personalized re-order prompts",
-      ],
-      description:
-        "True enterprise sustainability in Nepal comes from repeat business. We build automated retention loops that keep your brand top-of-mind across Viber, WhatsApp, and SMS, driving 35%+ of sales from loyal customers.",
-    },
-  ];
+  const [activePhase, setActivePhase] = useState(0);
+  const current = phases[activePhase];
+  const Icon = current.icon;
 
   return (
-    <section id="engine" className="relative py-28 bg-black text-white border-t border-white/10 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-white/10 text-xs font-mono uppercase tracking-[0.2em] text-zinc-400 mb-4">
-            <Zap className="w-3.5 h-3.5 text-white" />
-            <span>The FlatCircle Methodology</span>
+    <section
+      id="approach"
+      className="relative overflow-hidden border-t border-white/10 bg-black py-24 text-white sm:py-32"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:linear-gradient(to_bottom,black,transparent_75%)]" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-10 border-b border-white/10 pb-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+          <div>
+            <div className="mb-5 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
+              <span className="h-2 w-2 rounded-full bg-white" />
+              The FlatCircle approach
+            </div>
+            <h2 className="max-w-4xl text-4xl font-black tracking-[-0.06em] sm:text-6xl lg:text-7xl">
+              The right work, in the right order.
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[1.1] mb-6">
-            The Nepal Growth Engine:{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-300 to-zinc-600">
-              How We Scale
-            </span>
-          </h2>
-          <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-            A battle-tested 4-phase flywheel designed specifically for the Nepali market to eliminate ad waste, integrate digital wallets, and maximize compounding customer lifetime value.
-          </p>
+          <div className="lg:pb-1">
+            <p className="max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+              We combine clear thinking, purposeful design, and ongoing learning to help Nepal-based brands make meaningful progress online.
+            </p>
+            <div className="mt-6 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
+              <span>Understand</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+              <span>Build</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+              <span>Improve</span>
+            </div>
+          </div>
         </div>
 
-        {/* Step Navigation Tabs */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-12">
-          {steps.map((step, idx) => {
-            const Icon = step.icon;
-            const isActive = activeStep === idx;
-
+        <div className="mt-10 grid grid-cols-2 gap-3 lg:grid-cols-4">
+          {phases.map((phase, index) => {
+            const PhaseIcon = phase.icon;
+            const isActive = activePhase === index;
             return (
               <button
-                key={step.number}
-                onClick={() => setActiveStep(idx)}
-                className={`p-5 rounded-2xl text-left border transition-all duration-300 flex flex-col justify-between ${
+                type="button"
+                key={phase.number}
+                onClick={() => setActivePhase(index)}
+                className={`group relative overflow-hidden rounded-2xl border p-5 text-left transition-all duration-300 sm:p-6 ${
                   isActive
-                    ? "bg-zinc-900 border-white text-white shadow-xl shadow-white/5"
-                    : "bg-zinc-950/60 border-white/10 text-zinc-500 hover:text-zinc-300 hover:border-white/20"
+                    ? "border-white bg-white text-black shadow-[0_18px_40px_rgba(255,255,255,0.1)]"
+                    : "border-white/10 bg-zinc-950/80 text-zinc-400 hover:border-white/35 hover:bg-zinc-900 hover:text-white"
                 }`}
               >
-                <div className="flex items-center justify-between mb-4">
-                  <span
-                    className={`font-mono text-sm tracking-widest ${
-                      isActive ? "text-white font-bold" : "text-zinc-600"
-                    }`}
-                  >
-                    PHASE {step.number}
+                <div className="flex items-start justify-between gap-3">
+                  <span className={`font-mono text-[11px] tracking-[0.15em] ${isActive ? "text-black/45" : "text-zinc-600"}`}>
+                    PHASE {phase.number}
                   </span>
-                  <Icon
-                    className={`w-4 h-4 ${
-                      isActive ? "text-white" : "text-zinc-600"
-                    }`}
-                  />
+                  <PhaseIcon className="h-4 w-4" />
                 </div>
-                <div>
-                  <div
-                    className={`text-sm font-bold tracking-tight mb-1 line-clamp-1 ${
-                      isActive ? "text-white" : "text-zinc-400"
-                    }`}
-                  >
-                    {step.title}
-                  </div>
-                  <div className="text-[11px] font-mono text-zinc-500">
-                    {step.timeline}
-                  </div>
-                </div>
+                <p className="mt-9 text-lg font-black tracking-[-0.03em] sm:text-xl">{phase.title}</p>
+                <p className={`mt-1 text-[11px] leading-snug ${isActive ? "text-black/55" : "text-zinc-500"}`}>{phase.label}</p>
+                <span className={`absolute inset-x-5 bottom-0 h-0.5 origin-left transition-transform duration-300 ${isActive ? "scale-x-100 bg-black" : "scale-x-0 bg-white group-hover:scale-x-100"}`} />
               </button>
             );
           })}
         </div>
 
-        {/* Active Step Detailed Card */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-zinc-950 border border-white/15 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl pointer-events-none" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7">
-              <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-zinc-400 mb-3">
-                <span className="text-white font-bold">Phase {steps[activeStep].number}</span>
-                <span>•</span>
-                <span>{steps[activeStep].timeline}</span>
+        <div className="mt-5 overflow-hidden rounded-[2rem] border border-white/15 bg-zinc-950">
+          <div className="grid lg:grid-cols-[0.7fr_1.3fr]">
+            <div className="relative border-b border-white/10 bg-white p-7 text-black sm:p-10 lg:border-b-0 lg:border-r">
+              <div className="pointer-events-none absolute -bottom-20 -left-12 text-[13rem] font-black leading-none tracking-[-0.12em] text-black/[0.04]">
+                {current.number}
               </div>
-
-              <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
-                {steps[activeStep].title}
-              </h3>
-
-              <p className="text-base sm:text-lg text-zinc-300 font-light leading-relaxed mb-8">
-                {steps[activeStep].description}
-              </p>
-
-              <div>
-                <h4 className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-4 flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-white" />
-                  <span>Key Phase Deliverables</span>
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {steps[activeStep].deliverables.map((item, i) => (
-                    <div
-                      key={i}
-                      className="p-3 rounded-xl bg-zinc-900/80 border border-white/5 text-xs text-zinc-300 font-sans flex items-start gap-2.5"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+              <div className="relative">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-black text-white">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <p className="mt-10 text-[11px] font-semibold uppercase tracking-[0.2em] text-black/45">
+                  {current.label}
+                </p>
+                <h3 className="mt-3 text-4xl font-black tracking-[-0.055em] sm:text-5xl">{current.title}</h3>
+                <p className="mt-6 max-w-sm text-base leading-relaxed text-black/65">{current.outcome}</p>
+                <div className="mt-10 border-t border-black/10 pt-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">
+                  Phase {current.number} of 04
                 </div>
               </div>
             </div>
 
-            {/* Visual Graphic Representation */}
-            <div className="lg:col-span-5 flex flex-col justify-center items-center p-8 rounded-2xl bg-zinc-900/60 border border-white/10 text-center">
-              <div className="w-20 h-20 rounded-full bg-black border border-white/20 flex items-center justify-center mb-6 shadow-2xl">
-                {React.createElement(steps[activeStep].icon, {
-                  className: "w-8 h-8 text-white",
-                })}
-              </div>
-              <div className="text-xl font-bold text-white mb-2">
-                Scalable in Nepal & Overseas
-              </div>
-              <p className="text-xs text-zinc-400 max-w-xs font-light mb-6">
-                Engineered to navigate Nepal&apos;s digital payment landscape and convert high-intent buyers reliably.
+            <div className="p-7 sm:p-10">
+              <p className="max-w-2xl text-lg leading-relaxed text-zinc-300 sm:text-2xl sm:leading-relaxed">
+                {current.description}
               </p>
-              <div className="w-full flex items-center justify-between text-xs font-mono text-zinc-400 px-4 py-2 rounded-lg bg-black/60 border border-white/5">
-                <span>Phase Progress</span>
-                <span className="text-white font-bold">{(activeStep + 1) * 25}%</span>
+              <div className="mt-10 border-t border-white/10 pt-5">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">What this phase can include</p>
+                <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                  {current.deliverables.map((item) => (
+                    <div key={item} className="flex min-h-28 flex-col justify-between rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                      <Check className="h-4 w-4 text-white" />
+                      <p className="mt-6 text-sm leading-snug text-zinc-300">{item}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
+              <p className="mt-8 text-sm leading-relaxed text-zinc-500">
+                Every engagement is scoped around your current needs. The process gives the work structure while leaving room for the realities of your business.
+              </p>
             </div>
           </div>
         </div>

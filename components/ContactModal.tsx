@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { X, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
+import { contactServices } from "@/constants/services";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -57,7 +58,7 @@ function ContactModalContent({
   initialNote?: string;
 }) {
   const [selectedServices, setSelectedServices] = useState<string[]>([
-    preselectedService || "Meta & Google Ads",
+    preselectedService || "Digital Marketing Strategy & Campaign Support",
   ]);
   const [budget, setBudget] = useState<string>("रू 1.5L – रू 3.5L / mo");
   const [name, setName] = useState("");
@@ -68,14 +69,7 @@ function ContactModalContent({
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const servicesList = [
-    "Meta & Google Ads",
-    "Local SEO & Maps",
-    "eSewa / Khalti Funnels",
-    "TikTok & Video Ads",
-    "Viber & Bulk SMS",
-    "Corporate Digital PR",
-  ];
+  const servicesList = contactServices;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -105,7 +99,7 @@ function ContactModalContent({
             Dhanyabad! Brief Received
           </h3>
           <p className="text-sm text-zinc-400 max-w-md mx-auto font-light leading-relaxed">
-            Our growth strategists in Kathmandu are reviewing your application and will follow up with a bespoke 90-day growth roadmap at <strong className="text-white">{email}</strong> within 24 hours.
+            Our team is reviewing your brief and will follow up at <strong className="text-white">{email}</strong> with the right next steps for your digital marketing needs.
           </p>
           <button
             onClick={onClose}
@@ -129,14 +123,14 @@ function ContactModalContent({
               </div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-white/10 text-[10px] font-mono uppercase tracking-widest text-zinc-400">
                 <Sparkles className="w-3 h-3 text-white" />
-                <span>Start A Project in Nepal</span>
+                <span>Digital Marketing Support in Nepal</span>
               </div>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
               Partner With FlatCircle
             </h2>
             <p className="text-xs sm:text-sm text-zinc-400 font-light mt-1">
-              Tell us about your brand in Nepal and the revenue milestones you want to achieve.
+              Tell us about your brand, campaign goals, and the digital support you need.
             </p>
           </div>
 

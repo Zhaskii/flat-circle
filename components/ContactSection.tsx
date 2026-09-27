@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { ArrowRight, CheckCircle2, Sparkles, Mail, Phone, MapPin } from "lucide-react";
+import { contactServices } from "@/constants/services";
 
 interface ContactSectionProps {
   initialService?: string;
@@ -14,7 +15,7 @@ export default function ContactSection({
   initialNote,
 }: ContactSectionProps) {
   const [selectedServices, setSelectedServices] = useState<string[]>(
-    initialService ? [initialService] : ["Performance Meta & Google Ads"]
+    initialService ? [initialService] : ["Digital Marketing Strategy & Campaign Support"]
   );
   const [selectedBudget, setSelectedBudget] = useState<string>("रू 1.5L – रू 3.5L / month");
   const [formData, setFormData] = useState({
@@ -27,14 +28,7 @@ export default function ContactSection({
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const availableServices = [
-    "Meta & Google Ads",
-    "Local SEO & Maps",
-    "eSewa / Khalti Funnels",
-    "TikTok & Video Ads",
-    "Viber & Bulk SMS",
-    "Corporate Digital PR",
-  ];
+  const availableServices = contactServices;
 
   const budgetOptions = [
     "रू 50k – रू 1.5L / mo",
@@ -84,20 +78,20 @@ export default function ContactSection({
                 </div>
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-white/10 text-xs font-mono uppercase tracking-[0.2em] text-zinc-400">
                   <Sparkles className="w-3.5 h-3.5 text-white" />
-                  <span>Initiate Partnership in Nepal</span>
+                  <span>Start a Digital Marketing Conversation</span>
                 </div>
               </div>
 
               <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight leading-[1.05] mb-6">
-                Ready To{" "}
+                Ready To Build{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-300 to-zinc-600">
-                  Close The Loop
+                  Your Digital Presence
                 </span>{" "}
-                On Your Growth?
+                With Purpose?
               </h2>
 
               <p className="text-base sm:text-lg text-zinc-400 font-light leading-relaxed mb-10">
-                Tell us about your brand, current sales channels, and target revenue goals. Our growth team in Kathmandu will evaluate your digital presence and provide an actionable roadmap within 24 hours.
+                Tell us about your brand, audience, campaign goals, or current digital challenges. We&apos;ll help you identify the right starting point across SEO, creative, websites, and digital marketing.
               </p>
             </div>
 
@@ -165,7 +159,7 @@ export default function ContactSection({
                     Dhanyabad! Brief Received
                   </h3>
                   <p className="text-sm sm:text-base text-zinc-400 max-w-md mx-auto font-light leading-relaxed">
-                    Thank you, <strong className="text-white">{formData.name}</strong>. Our senior strategists in Kathmandu are reviewing your digital accounts and will contact you via email at <strong className="text-white">{formData.email}</strong> or phone within 24 hours.
+                    Thank you, <strong className="text-white">{formData.name}</strong>. Our team will review your brief and follow up via <strong className="text-white">{formData.email}</strong> or phone.
                   </p>
                   <button
                     onClick={() => {
@@ -182,7 +176,7 @@ export default function ContactSection({
                   {/* Service Selection Chips */}
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-widest text-zinc-400 mb-3">
-                      1. Which growth pillars does your business need in Nepal?
+                      1. Which digital marketing services do you need?
                     </label>
                     <div className="flex flex-wrap gap-2">
                       {availableServices.map((srv) => {
@@ -208,7 +202,7 @@ export default function ContactSection({
                   {/* Monthly Budget Selector */}
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-widest text-zinc-400 mb-3">
-                      2. Estimated Monthly Marketing &amp; Ad Budget
+                      2. Estimated Project or Campaign Budget
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                       {budgetOptions.map((b) => (
@@ -291,13 +285,13 @@ export default function ContactSection({
 
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-widest text-zinc-400 mb-2">
-                      Primary Bottleneck or Growth Target in Nepal
+                      Tell Us About Your Project
                     </label>
                     <textarea
                       rows={3}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="e.g. Scaling from रू 5L to रू 25L monthly sales. Need compliant Meta dollar ad setup, eSewa/Khalti checkout integration, and viral TikTok video ads."
+                      placeholder="e.g. We need a new website, an SEO review, graphic design support, or help improving our digital presence."
                       className="w-full px-4 py-3.5 rounded-xl bg-zinc-900/80 border border-white/10 focus:border-white text-white text-sm focus:outline-none transition-colors resize-none"
                     />
                   </div>
@@ -308,7 +302,7 @@ export default function ContactSection({
                     disabled={loading}
                     className="w-full py-4 px-8 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-widest hover:bg-zinc-200 active:scale-98 transition-all shadow-xl shadow-white/10 flex items-center justify-center gap-3 group"
                   >
-                    <span>{loading ? "Processing Brief..." : "Submit Growth Brief & Request Audit"}</span>
+                    <span>{loading ? "Processing Brief..." : "Submit Your Brief"}</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
 

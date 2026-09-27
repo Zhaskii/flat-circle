@@ -24,7 +24,7 @@ export default function RoiCalculator({
   const symbol = isNPR ? "रू " : "$";
 
   const calculations = useMemo(() => {
-    // CPC assumption: in Nepal ~रू 15-30 CPC (~$0.15-$0.25)
+    // Illustrative planning assumptions. Actual campaign results vary by market, offer, and execution.
     const cpc = isNPR ? 22 : 0.22;
     const currentTraffic = Math.max(1, Math.round(currentAdSpend / cpc));
     const currentOrders = Math.round(currentTraffic * (conversionRate / 100));
@@ -32,12 +32,8 @@ export default function RoiCalculator({
     const currentRoas =
       currentRevenue > 0 ? (currentRevenue / currentAdSpend).toFixed(2) : "1.0";
 
-    // FlatCircle Optimization in Nepal:
-    // 1. Better targeting & vernacular hooks: CPC drops by 20%
-    // 2. CRO + eSewa/Khalti instant payment: +45% conversion rate
-    // 3. Automated order confirmation drops COD cancellations: +25% net retained revenue
-    const optimizedCR = conversionRate * 1.45;
-    const optimizedAOV = currentAov * 1.25;
+    const optimizedCR = conversionRate * 1.25;
+    const optimizedAOV = currentAov * 1.1;
     const optimizedOrders = Math.round(currentTraffic * (optimizedCR / 100));
     const projectedRevenue = Math.round(optimizedOrders * optimizedAOV);
     const projectedRoas = (projectedRevenue / currentAdSpend).toFixed(2);
@@ -66,18 +62,17 @@ export default function RoiCalculator({
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-white/10 text-xs font-mono uppercase tracking-[0.2em] text-zinc-400 mb-4">
             <Calculator className="w-3.5 h-3.5 text-white" />
-            <span>Interactive Simulator</span>
+            <span>Interactive Campaign Planner</span>
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[1.1] mb-6">
-            Calculate Your{" "}
+            Plan Your{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-300 to-zinc-600">
-              Revenue Potential
+              Marketing Scenario
             </span>
           </h2>
           <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-            See the compounding revenue impact of deploying FlatCircle&apos;s
-            Meta/Google ad infrastructure, local SEO, and digital wallet
-            checkout systems in Nepal.
+            Explore how campaign budget, conversion rate, and average order value
+            can shape an illustrative revenue scenario for your business.
           </p>
 
           {/* Currency Toggle */}
@@ -112,7 +107,7 @@ export default function RoiCalculator({
             <div className="lg:col-span-6 space-y-8">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-bold tracking-tight text-white">
-                  Current Marketing Baseline
+                  Campaign Baseline
                 </h3>
                 <span className="text-xs font-mono text-zinc-500">
                   Currency: {currency}
@@ -122,7 +117,7 @@ export default function RoiCalculator({
               {/* Monthly Ad Spend Slider */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center text-sm font-mono">
-                  <span className="text-zinc-400">Monthly Ad Budget</span>
+                  <span className="text-zinc-400">Monthly Marketing Budget</span>
                   <span className="text-white font-extrabold text-base bg-zinc-900 px-3 py-1 rounded-lg border border-white/10">
                     {symbol}
                     {currentAdSpend.toLocaleString()}
@@ -238,9 +233,9 @@ export default function RoiCalculator({
               </div>
 
               <div className="p-4 rounded-xl bg-zinc-900/60 border border-white/5 text-xs text-zinc-400 font-light leading-relaxed">
-                * Models factor in eSewa/Khalti 1-click checkout adoption,
-                automated COD WhatsApp verification, and local Meta/TikTok
-                performance in Nepal.
+                * This is an illustrative planning tool, not a performance
+                guarantee. Actual outcomes depend on the offer, audience,
+                creative, channel mix, and execution.
               </div>
             </div>
 
@@ -249,11 +244,11 @@ export default function RoiCalculator({
               <div>
                 <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
                   <span className="text-xs font-mono uppercase tracking-widest text-zinc-400">
-                    Projected FlatCircle Lift
+                    Illustrative Marketing Scenario
                   </span>
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-400">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Compounding Model</span>
+                  <div className="flex items-center gap-1.5 text-xs font-mono text-white">
+                    <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                    <span>Planning model</span>
                   </div>
                 </div>
 

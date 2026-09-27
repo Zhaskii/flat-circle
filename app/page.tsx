@@ -5,8 +5,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import Services from "@/components/Services";
-import Work from "@/components/Work";
 import GrowthEngine from "@/components/GrowthEngine";
+import Work from "@/components/Work";
 import RoiCalculator from "@/components/RoiCalculator";
 import Testimonials from "@/components/Testimonials";
 import Faq from "@/components/Faq";
@@ -42,19 +42,19 @@ export default function Home() {
         {/* Infinite Brand Partners Marquee */}
         <Marquee />
 
-        {/* Dummy Digital Marketing Services */}
+        {/* FlatCircle capabilities */}
         <Services onOpenContactModal={(srv) => openContact(srv)} />
 
-        {/* "Work that's worked" Case Studies */}
-        <Work />
-
-        {/* 4-Step Growth Flywheel Methodology */}
+        {/* FlatCircle's practical working process */}
         <GrowthEngine />
 
-        {/* Interactive Growth & ROI Simulator */}
+        {/* Selected FlatCircle digital work */}
+        <Work />
+
+        {/* Interactive ROI calculator */}
         <RoiCalculator onOpenContactModal={(note) => openContact(undefined, note)} />
 
-        {/* Client Reviews & 5.0 Star Ratings */}
+        {/* Selected FlatCircle website work */}
         <Testimonials />
 
         {/* Frequently Asked Questions */}

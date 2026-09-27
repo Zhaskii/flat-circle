@@ -11,12 +11,14 @@ import {
   Zap,
 } from "lucide-react";
 import gsap from "gsap";
+import { agencyPositioning, heroProofPoints } from "@/constants/agency";
 
 interface HeroProps {
   onOpenContactModal?: () => void;
 }
 
 export default function Hero({ onOpenContactModal }: HeroProps) {
+  const proofIcons = [TrendingUp, Zap, Sparkles, ShieldCheck];
   const containerRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
@@ -112,15 +114,12 @@ export default function Hero({ onOpenContactModal }: HeroProps) {
             className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-white/10 text-[11px] font-mono tracking-[0.2em] text-zinc-300 backdrop-blur-md"
           >
             <span className="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#ffffff] animate-pulse" />
-            <span>NEPAL&apos;S PREMIER PERFORMANCE &amp; DIGITAL AGENCY</span>
+            <span>DIGITAL MARKETING AGENCY • NEPAL</span>
           </div>
 
           <div className="hidden md:flex items-center gap-2 text-xs font-mono text-zinc-400">
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-            <span>
-              KATHMANDU / POKHARA PARTNERSHIPS:{" "}
-              <strong className="text-white">2 SLOTS OPEN</strong>
-            </span>
+            <span className="inline-block w-2 h-2 rounded-full bg-white animate-ping" />
+            <span>KATHMANDU, NEPAL • SEO / CREATIVE / DIGITAL</span>
           </div>
         </div>
 
@@ -130,12 +129,12 @@ export default function Hero({ onOpenContactModal }: HeroProps) {
             ref={headlineRef}
             className="text-4xl sm:text-6xl md:text-7xl lg:text-[84px] font-black tracking-tight leading-[1.05] uppercase mb-8"
           >
-            Compounding Growth{" "}
+            Digital Marketing{" "}
             <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-500">
-              For Ambitious
+              Built for
             </span>{" "}
             <span className="inline-flex items-center">
-              Nepali Brands
+              Meaningful Growth
               <span className="inline-block w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white ml-2 sm:ml-4 animate-pulse shadow-[0_0_15px_#ffffff]" />
             </span>
           </h1>
@@ -145,9 +144,7 @@ export default function Hero({ onOpenContactModal }: HeroProps) {
             ref={descRef}
             className="text-lg sm:text-xl md:text-2xl text-zinc-400 font-light max-w-3xl leading-relaxed mb-10 tracking-wide"
           >
-            FlatCircle bridges dollar-card compliant paid media (Meta &amp;
-            Google), local Nepali search dominance, viral TikTok creative, and
-            high-conversion funnels integrated with eSewa, Khalti, and Fonepay.
+            {agencyPositioning.description}
           </p>
 
           {/* Interactive CTAs */}
@@ -159,7 +156,7 @@ export default function Hero({ onOpenContactModal }: HeroProps) {
               onClick={onOpenContactModal}
               className="relative group px-8 py-4 rounded-full bg-white text-black font-bold text-sm uppercase tracking-widest overflow-hidden transition-all duration-300 hover:bg-zinc-200 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] active:scale-95 flex items-center justify-center gap-3"
             >
-              <span>Start Your Project</span>
+              <span>Plan Your Digital Strategy</span>
               <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </button>
 
@@ -167,7 +164,7 @@ export default function Hero({ onOpenContactModal }: HeroProps) {
               href="#work"
               className="px-8 py-4 rounded-full bg-zinc-900/90 hover:bg-zinc-800 border border-white/15 text-white font-semibold text-sm uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 hover:border-white/40 active:scale-95 group"
             >
-              <span>Explore Nepali Case Studies</span>
+              <span>View Selected Work</span>
               <ChevronDown className="w-4 h-4 text-zinc-400 transition-transform duration-300 group-hover:translate-y-1" />
             </a>
           </div>
@@ -178,65 +175,19 @@ export default function Hero({ onOpenContactModal }: HeroProps) {
           ref={metricsRef}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-10 border-t border-white/10"
         >
-          <div className="p-4 sm:p-6 rounded-2xl bg-zinc-950/60 border border-white/5 backdrop-blur-sm group hover:border-white/20 transition-colors">
-            <div className="flex items-center justify-between text-zinc-500 mb-2">
-              <span className="text-[11px] font-mono uppercase tracking-wider">
-                Average ROAS
-              </span>
-              <TrendingUp className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
-            </div>
-            <div className="text-3xl sm:text-4xl font-extrabold font-mono tracking-tight text-white">
-              4.9x
-            </div>
-            <p className="text-xs text-zinc-500 mt-1 font-sans">
-              Blended cross-channel return
-            </p>
-          </div>
-
-          <div className="p-4 sm:p-6 rounded-2xl bg-zinc-950/60 border border-white/5 backdrop-blur-sm group hover:border-white/20 transition-colors">
-            <div className="flex items-center justify-between text-zinc-500 mb-2">
-              <span className="text-[11px] font-mono uppercase tracking-wider">
-                Ad Spend Managed
-              </span>
-              <Zap className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
-            </div>
-            <div className="text-3xl sm:text-4xl font-extrabold font-mono tracking-tight text-white">
-              रू 12 Cr+
-            </div>
-            <p className="text-xs text-zinc-500 mt-1 font-sans">
-              Deployed in Nepal &amp; Overseas
-            </p>
-          </div>
-
-          <div className="p-4 sm:p-6 rounded-2xl bg-zinc-950/60 border border-white/5 backdrop-blur-sm group hover:border-white/20 transition-colors">
-            <div className="flex items-center justify-between text-zinc-500 mb-2">
-              <span className="text-[11px] font-mono uppercase tracking-wider">
-                Organic Reach
-              </span>
-              <Sparkles className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
-            </div>
-            <div className="text-3xl sm:text-4xl font-extrabold font-mono tracking-tight text-white">
-              18M+
-            </div>
-            <p className="text-xs text-zinc-500 mt-1 font-sans">
-              Reaching Nepal &amp; Diaspora
-            </p>
-          </div>
-
-          <div className="p-4 sm:p-6 rounded-2xl bg-zinc-950/60 border border-white/5 backdrop-blur-sm group hover:border-white/20 transition-colors">
-            <div className="flex items-center justify-between text-zinc-500 mb-2">
-              <span className="text-[11px] font-mono uppercase tracking-wider">
-                Client Retention
-              </span>
-              <ShieldCheck className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
-            </div>
-            <div className="text-3xl sm:text-4xl font-extrabold font-mono tracking-tight text-white">
-              96.8%
-            </div>
-            <p className="text-xs text-zinc-500 mt-1 font-sans">
-              Enterprise retention across Nepal
-            </p>
-          </div>
+          {heroProofPoints.map((point, index) => {
+            const Icon = proofIcons[index];
+            return (
+              <div key={point.label} className="p-4 sm:p-6 rounded-2xl bg-zinc-950/60 border border-white/5 backdrop-blur-sm group hover:border-white/20 transition-colors">
+                <div className="flex items-center justify-between text-zinc-500 mb-2">
+                  <span className="text-[11px] font-mono uppercase tracking-wider">{point.label}</span>
+                  <Icon className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
+                </div>
+                <div className="text-3xl sm:text-4xl font-extrabold font-mono tracking-tight text-white">{point.value}</div>
+                <p className="text-xs text-zinc-500 mt-1 font-sans">{point.detail}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

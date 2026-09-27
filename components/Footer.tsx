@@ -54,14 +54,13 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-6">
             <Logo size="lg" />
             <p className="text-sm text-zinc-400 font-light max-w-sm leading-relaxed">
-              FlatCircle is Nepal&apos;s premier performance digital marketing
-              agency. We engineer full-funnel customer acquisition systems,
-              local SEO, and digital wallet payment funnels that scale ambitious
-              Nepali enterprises.
+              FlatCircle is a Nepal-based digital marketing agency for SEO,
+              campaign strategy, social content, graphic design, websites, and
+              ongoing digital optimization.
             </p>
             <div className="space-y-1.5 font-mono text-xs text-zinc-500">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
                 <span>Kathmandu Studio: Operating Live</span>
               </div>
               <div className="text-[11px] text-zinc-600">
@@ -82,7 +81,7 @@ export default function Footer() {
                   href="#services"
                   className="hover:text-white transition-colors"
                 >
-                  Meta &amp; Google Ads
+                  Digital Marketing Strategy
                 </a>
               </li>
               <li>
@@ -90,7 +89,7 @@ export default function Footer() {
                   href="#services"
                   className="hover:text-white transition-colors"
                 >
-                  Local SEO &amp; Google Maps
+                  SEO &amp; Search Optimization
                 </a>
               </li>
               <li>
@@ -98,7 +97,7 @@ export default function Footer() {
                   href="#services"
                   className="hover:text-white transition-colors"
                 >
-                  eSewa &amp; Khalti Funnels
+                  Social Media &amp; Content
                 </a>
               </li>
               <li>
@@ -106,7 +105,7 @@ export default function Footer() {
                   href="#services"
                   className="hover:text-white transition-colors"
                 >
-                  TikTok &amp; Reels Creative
+                  Graphic Design &amp; Campaign Creative
                 </a>
               </li>
               <li>
@@ -114,7 +113,7 @@ export default function Footer() {
                   href="#services"
                   className="hover:text-white transition-colors"
                 >
-                  Viber &amp; SMS Retention
+                  Websites &amp; Conversion Pages
                 </a>
               </li>
               <li>
@@ -122,7 +121,7 @@ export default function Footer() {
                   href="#services"
                   className="hover:text-white transition-colors"
                 >
-                  Corporate Digital PR
+                  Ongoing Optimization Support
                 </a>
               </li>
             </ul>
@@ -136,23 +135,15 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs text-zinc-400 font-sans">
               <li>
                 <a href="#work" className="hover:text-white transition-colors">
-                  Nepal Case Studies
+                  Digital Case Studies
                 </a>
               </li>
               <li>
                 <a
-                  href="#engine"
+                  href="#work"
                   className="hover:text-white transition-colors"
                 >
-                  The Nepal Growth Engine
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#roi-calculator"
-                  className="hover:text-white transition-colors"
-                >
-                  ROI Simulator (NPR/USD)
+                  Website &amp; Campaign Foundations
                 </a>
               </li>
               <li>
@@ -160,7 +151,15 @@ export default function Footer() {
                   href="#reviews"
                   className="hover:text-white transition-colors"
                 >
-                  Client Reviews
+                  SEO Performance Proof
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#reviews"
+                  className="hover:text-white transition-colors"
+                >
+                  Search Visibility Gallery
                 </a>
               </li>
               <li>

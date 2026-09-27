@@ -2,36 +2,10 @@
 
 import React, { useState } from "react";
 import { Plus, Minus, HelpCircle } from "lucide-react";
+import { faqs } from "@/constants/faqs";
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-  const faqs = [
-    {
-      q: "How do you handle international dollar ad spend for Meta and Google Ads in Nepal?",
-      a: "Nepali banks limit personal dollar cards to $500/year, which cripples serious scaling. FlatCircle operates with compliant international agency ad accounts and corporate foreign exchange billing, allowing your business to scale ad spend from $500 to $20,000+ per month legally without card blocks or account bans.",
-    },
-    {
-      q: "How do you solve Cash-on-Delivery (COD) fraud and delivery return (RTO) losses?",
-      a: "In Nepal, high COD return rates (often 30%-40%) kill eCommerce profitability. We integrate instant payment gateways (eSewa, Khalti, ConnectIPS, Fonepay) with special prepaid discounts, combined with automated WhatsApp and SMS order confirmation bots that verify customer phone numbers and delivery addresses before courier dispatch.",
-    },
-    {
-      q: "Can you target the Nepali diaspora living abroad in Australia, the US, and UK?",
-      a: "Yes! A huge growth lever for Nepali brands, tourism operators, real estate, and education consultancies is reaching the high-earning Nepali diaspora. We run precision-targeted campaigns reaching Nepalis in Sydney, Melbourne, Dallas, London, Tokyo, and Dubai for remittances, homeland investments, and family gifting.",
-    },
-    {
-      q: "Do you produce video and ad content in Nepali or English?",
-      a: "Both. For local mass-market campaigns on TikTok and Instagram, we create authentic conversational Nepali content with relatable cultural hooks and humor. For corporate B2B clients, education consultancies, and export brands (pashmina, tea, tourism), we produce high-end international English creative.",
-    },
-    {
-      q: "What is the recommended monthly budget for partnering with FlatCircle in Nepal?",
-      a: "We work with businesses ready to invest between रू 40,000 and रू 15,00,000+ (15 Lakhs) per month across paid channels, as well as fast-growing seed/Series-A startups and established Nepali conglomerates. We focus strictly on measurable ROI and contribution profit.",
-    },
-    {
-      q: "Where is FlatCircle located in Nepal, and can we meet in person?",
-      a: "Our headquarters is located in Jhamsikhel, Lalitpur (Kathmandu Valley), with partner representatives in Pokhara. We welcome founders and marketing heads to our studio for espresso, detailed funnel whiteboarding, and growth strategy sessions.",
-    },
-  ];
 
   return (
     <section id="faq" className="relative py-28 bg-black text-white border-t border-white/10">
@@ -49,7 +23,7 @@ export default function Faq() {
             </span>
           </h2>
           <p className="text-sm sm:text-base text-zinc-400 font-light">
-            Everything you need to know about partnering with FlatCircle to scale your brand in Nepal and globally.
+            Everything you need to know about partnering with FlatCircle for professional digital marketing in Nepal.
           </p>
         </div>
 
@@ -67,7 +41,7 @@ export default function Faq() {
                   className="w-full p-6 sm:p-7 text-left flex items-center justify-between gap-4 transition-colors"
                 >
                   <span className="font-bold text-base sm:text-lg text-white">
-                    {faq.q}
+                    {faq.question}
                   </span>
                   <div className="w-8 h-8 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center shrink-0 text-white transition-transform duration-300">
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
@@ -76,7 +50,7 @@ export default function Faq() {
 
                 {isOpen && (
                   <div className="px-6 pb-7 sm:px-7 pt-0 text-sm sm:text-base text-zinc-400 font-light leading-relaxed border-t border-white/5 mt-2">
-                    <p className="pt-4">{faq.a}</p>
+                    <p className="pt-4">{faq.answer}</p>
                   </div>
                 )}
               </div>

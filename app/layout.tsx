@@ -17,20 +17,39 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "FlatCircle • Premier Digital Marketing Agency in Nepal | Kathmandu",
+  title: {
+    default: "FlatCircle | Digital Marketing Agency in Nepal",
+    template: "%s | FlatCircle",
+  },
   description:
-    "FlatCircle is Nepal's leading performance digital marketing agency. We specialize in Meta & Google Ads, Local SEO, TikTok marketing, eCommerce funnels (eSewa/Khalti), and brand scaling in Kathmandu, Nepal.",
+    "FlatCircle is a Nepal-based digital marketing agency for SEO, digital campaigns, social content, graphic design, websites, and ongoing optimization.",
   keywords: [
     "Digital Marketing Agency Nepal",
-    "Digital Marketing in Kathmandu",
+    "Digital Marketing Kathmandu",
     "SEO Services Nepal",
-    "Facebook Ads Nepal",
-    "TikTok Marketing Nepal",
-    "Google Ads Agency Nepal",
-    "Local SEO Kathmandu",
+    "Graphic Design Nepal",
+    "Social Media Marketing Nepal",
+    "Digital Campaigns Nepal",
+    "Website Design Nepal",
+    "E-commerce Website Nepal",
     "FlatCircle Agency Nepal",
   ],
   authors: [{ name: "FlatCircle Digital Agency Pvt. Ltd." }],
+  category: "Digital Marketing",
+  openGraph: {
+    type: "website",
+    locale: "en_NP",
+    siteName: "FlatCircle",
+    title: "FlatCircle | Digital Marketing Agency in Nepal",
+    description:
+      "Strategy, SEO, campaigns, creative, and websites for ambitious Nepal-based brands.",
+  },
+  twitter: {
+    card: "summary",
+    title: "FlatCircle | Digital Marketing Agency in Nepal",
+    description:
+      "Strategy, SEO, campaigns, creative, and websites for ambitious Nepal-based brands.",
+  },
   icons: {
     icon: "/assets/Flatcircle-Logo.png",
     shortcut: "/assets/Flatcircle-Logo.png",
