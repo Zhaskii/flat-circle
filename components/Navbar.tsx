@@ -153,18 +153,18 @@ export default function Navbar({ onOpenContactModal }: NavbarProps) {
 
           <div className="grid grid-cols-2 gap-3 text-xs text-zinc-400 pt-2 font-mono">
             <a
-              href="mailto:namaste@flatcircle.com.np"
+              href="mailto:flatcircle.np@gmail.com"
               className="flex items-center gap-2 p-2 rounded-lg bg-zinc-900/60 border border-white/5 hover:border-white/20 transition-colors"
             >
               <Mail className="w-3.5 h-3.5 text-zinc-500" />
-              <span className="truncate">namaste@flatcircle</span>
+              <span className="truncate">flatcircle.np@gmail</span>
             </a>
             <a
-              href="tel:+9779801422000"
+              href="tel:+9779841489555"
               className="flex items-center gap-2 p-2 rounded-lg bg-zinc-900/60 border border-white/5 hover:border-white/20 transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-zinc-500" />
-              <span>+977 980-1422000</span>
+              <span>+977 9841489555</span>
             </a>
           </div>
         </div>

@@ -236,7 +236,7 @@ function ContactModalContent({
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="+977 9801234567"
+                placeholder="Your mobile number or WhatsApp"
                 className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-white/10 focus:border-white text-white text-xs focus:outline-none"
               />
             </div>

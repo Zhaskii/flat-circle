@@ -98,7 +98,7 @@ export default function ContactSection({
             {/* Direct Contact Badges */}
             <div className="space-y-4 pt-8 border-t border-white/10">
               <a
-                href="mailto:namaste@flatcircle.com.np"
+                href="mailto:flatcircle.np@gmail.com"
                 className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-950 border border-white/10 hover:border-white/30 transition-colors group"
               >
                 <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center text-white border border-white/10 group-hover:bg-white group-hover:text-black transition-colors">
@@ -109,13 +109,13 @@ export default function ContactSection({
                     Direct Inquiry • Kathmandu
                   </span>
                   <span className="text-sm font-semibold text-white">
-                    namaste@flatcircle.com.np
+                    flatcircle.np@gmail.com
                   </span>
                 </div>
               </a>
 
               <a
-                href="tel:+9779801422000"
+                href="tel:+9779841489555"
                 className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-950 border border-white/10 hover:border-white/30 transition-colors group"
               >
                 <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center text-white border border-white/10 group-hover:bg-white group-hover:text-black transition-colors">
@@ -126,24 +126,29 @@ export default function ContactSection({
                     Direct Line / WhatsApp
                   </span>
                   <span className="text-sm font-semibold text-white">
-                    +977 980-1422000 / +977 1-5422000
+                    +977 9841489555
                   </span>
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-950 border border-white/10">
-                <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center text-white border border-white/10">
+              <a
+                href="https://www.google.com/maps/place/Arksh+Group/@27.7263471,85.3190775,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb1918569c8961:0x5f43dd27a908ad94!8m2!3d27.7263471!4d85.3216524!16s%2Fg%2F11g8cnz9hx?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-950 border border-white/10 hover:border-white/30 transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center text-white border border-white/10 group-hover:bg-white group-hover:text-black transition-colors">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
                   <span className="text-[10px] font-mono uppercase text-zinc-500 block">
-                    Studio &amp; Office
+                    Studio &amp; Office · View on Maps
                   </span>
                   <span className="text-sm font-semibold text-white">
-                    Jhamsikhel Road, Ward 3, Lalitpur (Kathmandu Valley), Nepal
+                    152 Rani Devi Marg, Lazimpat, Kathmandu, Nepal
                   </span>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -263,7 +268,7 @@ export default function ContactSection({
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+977 9801234567"
+                        placeholder="Your mobile number or WhatsApp"
                         className="w-full px-4 py-3.5 rounded-xl bg-zinc-900/80 border border-white/10 focus:border-white text-white text-sm focus:outline-none transition-colors"
                       />
                     </div>
