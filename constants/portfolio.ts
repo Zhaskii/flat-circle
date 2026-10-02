@@ -16,7 +16,6 @@ export interface PortfolioProject {
   results: string[];
   color: string;
   websiteUrl?: string;
-  logoUrl?: string;
 }
 
 export const portfolioProjects: PortfolioProject[] = [
@@ -43,7 +42,6 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     color: "from-zinc-900 via-zinc-900 to-black",
     websiteUrl: "https://suluxhour.com/",
-    logoUrl: "https://suluxhour.com/favicon.ico",
   },
   {
     id: "sulux-centre",
@@ -68,7 +66,6 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     color: "from-zinc-900 via-zinc-900 to-black",
     websiteUrl: "https://www.suluxcentre.com/",
-    logoUrl: "https://www.suluxcentre.com/favicon.ico",
   },
   {
     id: "arksh-group",
@@ -93,7 +90,6 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     color: "from-zinc-900 via-zinc-900 to-black",
     websiteUrl: "https://arkshgroup.com/",
-    logoUrl: "https://arkshgroup.com/favicon.ico",
   },
   {
     id: "arksh-agro",
@@ -118,7 +114,6 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     color: "from-zinc-900 via-zinc-900 to-black",
     websiteUrl: "https://agro.arkshgroup.com/",
-    logoUrl: "https://agro.arkshgroup.com/favicon.ico",
   },
   // {
   //   id: "urban-earth",
@@ -159,7 +154,6 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     color: "from-zinc-900 via-zinc-900 to-black",
     websiteUrl: "https://www.arkshfood.com/",
-    logoUrl: "https://www.arkshfood.com/favicon.ico",
   },
   {
     id: "arksh-store",
@@ -184,7 +178,6 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     color: "from-zinc-900 via-zinc-900 to-black",
     websiteUrl: "https://www.arkshstore.com/",
-    logoUrl: "https://www.arkshstore.com/favicon.ico",
   },
   {
     id: "nirvana-physiotherapy",
@@ -209,7 +202,6 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     color: "from-zinc-900 via-zinc-900 to-black",
     websiteUrl: "https://www.npwc.com.np/",
-    logoUrl: "https://www.npwc.com.np/favicon.ico",
   },
   {
     id: "hotel-peaceland",
@@ -233,7 +225,6 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     color: "from-zinc-900 via-zinc-900 to-black",
     websiteUrl: "https://hotelpeaceland.com/",
-    logoUrl: "https://hotelpeaceland.com/favicon.ico",
   },
 ];
 

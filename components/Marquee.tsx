@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import { portfolioProjects } from "@/constants/portfolio";
 
 export default function Marquee() {
@@ -18,16 +15,12 @@ export default function Marquee() {
         </p>
       </div>
 
-      {/* Ticker Container with infinite animation */}
-      <div className="flex select-none overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-        <div
-          className="flex shrink-0 items-center gap-8 animate-marquee"
-          style={{ animationDuration: "45s" }}
-        >
-          {[...portfolioProjects, ...portfolioProjects].map((brand, i) => (
+      <div className="overflow-x-auto pb-3 [scrollbar-width:thin]">
+        <div className="flex min-w-max items-center gap-4 px-4 sm:px-6 lg:px-8">
+          {portfolioProjects.map((brand) => (
             <div
-              key={`${brand.id}-${i}`}
-              className="flex items-center gap-4 px-6 py-3.5 rounded-xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-all cursor-pointer group"
+              key={brand.id}
+              className="flex items-center gap-4 px-6 py-3.5 rounded-xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-colors group"
             >
               <div className="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/10 group-hover:border-white group-hover:bg-white group-hover:text-black transition-all">
                 <span className="font-mono font-extrabold text-xs">

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2, Sparkles, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles, Mail, MessageCircle, Phone, MapPin } from "lucide-react";
 import { contactServices } from "@/constants/services";
 
 interface ContactSectionProps {
@@ -123,10 +123,29 @@ export default function ContactSection({
                 </div>
                 <div>
                   <span className="text-[10px] font-mono uppercase text-zinc-500 block">
-                    Direct Line / WhatsApp
+                    Direct Line
                   </span>
                   <span className="text-sm font-semibold text-white">
                     +977 9841489555
+                  </span>
+                </div>
+              </a>
+
+              <a
+                href="https://wa.me/9779841489555"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-950 border border-white/10 hover:border-white/30 transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center text-white border border-white/10 group-hover:bg-white group-hover:text-black transition-colors">
+                  <MessageCircle className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-mono uppercase text-zinc-500 block">
+                    WhatsApp
+                  </span>
+                  <span className="text-sm font-semibold text-white">
+                    Message +977 9841489555
                   </span>
                 </div>
               </a>
